@@ -1,0 +1,25 @@
+# ./EKS/Deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bespin-eks-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bespin-eks
+  template:
+    metadata:
+      labels:
+        app: bespin-eks
+    spec:
+      containers:
+        - name: bespin-eks
+          image: AWS_ECR_URI
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+          env:
+            - name: DATE
+              value: 'DATE_STRING'
