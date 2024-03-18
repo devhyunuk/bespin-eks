@@ -1,11 +1,4 @@
-# Cloud9 IDE 환경 구성
-
-
-
-### 목표
-- Docker를 사용하여 컨테이너 이미지를 생성하고 배포하는 방법을 익히는 것
-- 컨테이너 개수가 많아지게 되면 이를 효율적으로 다루는 방법을 배우는 것
-- EKS를 사용하여 컨테이너를 효율적으로 관리하는 방법을 익히는 것
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/80a2be2b-70ac-4d39-a8a3-4e2a07aa72fa)![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/528d60ae-e129-44b9-96d6-0113c9fbca2d)# Cloud9 IDE 환경 구성
 
 --- 
 ### 1. Cloud9 생성
@@ -60,3 +53,17 @@ rm -vf ${HOME}/.aws/credentials
 ```
 
 10. Cloud9 생성과 권한 부여 완료
+
+--- 
+#### 2. Cloud9 IDE 환경 구성
+1. Cloud9 인스턴스 선택 > 보안 탭 메뉴 확인 > 보안 그룹 링크 선택
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/ee68b7cf-c5f3-4645-b431-32368483de33)
+
+2. 인바운드 규칙(Inbound Rule) > 인바운드 규칙 편집(Edit Inbound rules) 버튼 선택
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/7eb3687e-861e-4a2c-a6dc-cc805d3955e4)
+
+3. 규칙 추가 버튼 선택 > 규칙 2개 추가 > 규칙 저장 (http와 2000번 포트는 추후 Docker에서 사용)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/1fd4519c-a51b-44fe-8cd7-568b24d660c2)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/509fdd81-3596-456a-ab22-abdb887965bc)
+
+
