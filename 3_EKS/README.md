@@ -8,6 +8,7 @@
 - Deployment 배포
 - Service 배포
 - Namespace 배포
+- 리소스 삭제
 
 --- 
 ### 1. EKS 설치
@@ -61,7 +62,18 @@ kubectl get nodes
 ![image](https://github.com/devhyunuk/eks-essential/assets/49749510/556fe236-cef7-4b5f-b5de-47b019be0ef8)
 
 
+--- 
+### 2. 리소스 삭제
+1. EKS 삭제
+```
+eksctl delete cluster --name myeks --region ${AWS_REGION}
+```
 
+2. Cloud9 인스턴스 삭제
+
+3. IAM 에서 admin eksrole 삭제
+
+4. Elastic Container Registry 에서 리포지토리 삭
 
 
 
