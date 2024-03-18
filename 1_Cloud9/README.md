@@ -10,19 +10,19 @@
 --- 
 ### 1. Cloud9 생성
 1. 환경 생성(Create environment) 버튼 선택
-![img.png](img.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/1e6f21a2-d351-4e1c-8643-cb303fd99ce4)
 
 2. 이름(Name)에 hyunuk-cloud9를 입력
-![img_1.png](img_1.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/6438ee0a-63c1-43ac-aee6-81a46cc54766)
 
 3. 인스턴스 유형에 t3.small을 선택
-![img_2.png](img_2.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/04f8ba66-7012-47d4-a4e4-d63c37b7207b)
 
 4. 생성(Create) 버튼 클릭
-![img_3.png](img_3.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/f52bd284-d5f7-43e8-b688-053878291a64)
 
 5. 열림(Open) 선택
-![img_4.png](img_4.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/29eeecce-4b63-4ded-9cc8-c8c9ce636cb7)
 
 
 --- 
@@ -30,26 +30,21 @@
 #### 1. IAM을 활용하여 역할(Role) 만들어서 권한 부여하는 방법
 
 1. 역할(Role) 메뉴를 클릭하고, 역할 만들기(Create role) 버튼을 클릭합니다.
-![img_6.png](img_6.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/3967ff70-0ed7-4668-9ccc-f75b588a02c0)
 
 2. AWS Service선택하고, EC2를 선택 (AWS 서비스에서 다른 서비스에 접근하기 위한 권한을 설정하기 위함)
-![img_5.png](img_5.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/46a8ca39-882e-48a3-85b1-9710f126ede9)
 
 3. AdministratorAccess 권한을 체크
-![img_7.png](img_7.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/fa886913-3df1-4401-92be-20017f93bbaa)
 
 4, 역할 이름(Role name) 에 입력
-![img_8.png](img_8.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/82d3fdbd-f3db-4ce6-bab1-e4396f986333)
 
 5. 역할 생성(Create role) 선택
-![img_9.png](img_9.png)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/dfc47a69-625e-4349-8ee4-8b8fd0b34e30)
 
 6. Cloud9 인스턴스를 선택 > 작업(Actions) 선택 > 보안(Security) 선택 > IAM 역할 수정(Modify IAM role) 선택
-![img_10.png](img_10.png)
-7. 
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/499a9270-f8ec-4bf9-af11-37218c2c437b)
 
-
-
-
-
-
+8. 
