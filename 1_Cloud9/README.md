@@ -65,7 +65,3 @@ rm -vf ${HOME}/.aws/credentials
 3. 규칙 추가 버튼 선택 > 규칙 2개 추가 > 규칙 저장 (http와 2000번 포트는 추후 Docker에서 사용)
 ![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/1fd4519c-a51b-44fe-8cd7-568b24d660c2)
 ![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/509fdd81-3596-456a-ab22-abdb887965bc)
-
-
-![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/80a2be2b-70ac-4d39-a8a3-4e2a07aa72fa)
-![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/528d60ae-e129-44b9-96d6-0113c9fbca2d)
