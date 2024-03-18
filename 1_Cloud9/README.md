@@ -38,7 +38,7 @@
 3. AdministratorAccess 권한을 체크
 ![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/fa886913-3df1-4401-92be-20017f93bbaa)
 
-4, 역할 이름(Role name) 에 입력
+4. 역할 이름(Role name) 에 입력
 ![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/82d3fdbd-f3db-4ce6-bab1-e4396f986333)
 
 5. 역할 생성(Create role) 선택
