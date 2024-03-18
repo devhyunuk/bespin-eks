@@ -1,4 +1,4 @@
-# Cloud9 IDE 환경 구성
+<img width="549" alt="image" src="https://github.com/devhyunuk/bespin-essential/assets/49749510/a64e8723-8e32-4d6d-8353-47393eea4b7e"># Cloud9 IDE 환경 구성
 
 ### 목표
 - Docker 명령어
@@ -122,19 +122,125 @@ docker rmi nginx
 
 --- 
 ### 2. Docker image build
-1. 
+1. 깃허브에 오픈되어 있는 2048게임 코드를 다운
+```
+git clone https://github.com/gabrielecirulli/2048
+```
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/d70d7d81-2e55-4527-9ca4-ec7d4b286b77)
 
+2. 다운받은 2048게 디렉토리로 이동
+```
+cd ~/environment/2048
+```
 
+3. Dockerfile 생성 명령어
+```
+cat <<EOF > Dockerfile 
+FROM nginx:latest
 
+COPY . /usr/share/nginx/html
 
+EXPOSE 80
+EOF
+```
 
+4. Docker 이미지 다운로드 확인
+```
+docker build -t game2048 .
+```
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/2c2904a1-2eeb-4339-95bc-afb3ce969849)
 
+5. Docker 이미지를 기반으로 컨테이너를 실행 > 브라우저에 Cloud9 인스턴스의 Public IP 주소를 입력하여 2048 게임 화면이 제대로 나오는지 확인
+```
+docker run --name game2048 -dp 80:80 game2048
+```
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/bd45f758-9953-4f6a-b04f-7de9b0f48da3)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/a34b144f-f52a-4f6e-b074-59f9b055871b)
 
-
+6. 모든 컨테이너를 삭제 > 모든 이미지 삭제
+```
+docker rm -f $(docker ps -aq)
+docker rmi -f $(docker images -q)
+```
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/d5b3c6d0-7b25-4ffb-8607-aa60c3d32b9c)
 
 --- 
-### 2. 인증/자격증명 및 환경 구성
-#### 1. IAM을 활용하여 역할(Role) 만들어서 권한 부여하는 방법
+### 3. ECR에 Docker image upload
+1. ECR 레포지토리 만들기 > Elastic Container Registry 이동 > 리포지토리 생성(Create repository) 버튼 선택
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/73e62bc1-1130-4f86-b2c9-b8d9b33ad4b4)
+
+2. 리포지토리 이름(Repository name) 에 hyunuk-repo를 입력
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/08e4d8bc-5ea3-41de-ae45-0c1b1abebe1a)
+
+3. 리포지토리 생성(Create repository) 버튼 선택
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/7f6d743a-f3a0-4a2a-8614-8ed3e513ed61)
+
+4. hyunuk-repo 선택 > 푸시 명령 보기(View push commands) 버튼 선택
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/92c9864f-4afb-49dc-b6d8-4383d98429b8)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/ad2df80a-8830-43f4-96a6-a39b1f1e10ab)
+
+5. 리포지토리(Repository) 에 인증하는 명령어, 이미지 빌드, 태깅, 푸쉬(업로드) 하는 명령어 확인
+<img width="411" alt="image" src="https://github.com/devhyunuk/bespin-essential/assets/49749510/edc790a3-05f5-444f-a603-8b5e40412347">
+
+6. 푸시 명령어 중에 1번, 인증하는 명령어를 복사하여 Cloud9 의 터미널창에 실행
+<img width="549" alt="image" src="https://github.com/devhyunuk/bespin-essential/assets/49749510/eff35c5b-f850-48f6-b02e-5aa7531d0540">
+
+7. 푸시 명령어 중에 2번, 이미지 빌드하는 명령어 실행
+```
+docker build -t hyunuk-repo .
+```
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/3c9cb6b1-60cb-4e90-8101-7cc55aadb6e8)
+
+8. 푸시 명령어 중에 3번 명령어를 실행하여 이미지를 태깅
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/007526c9-8240-4ec4-b74e-8642f09983cf)
+
+9. 이미지가 잘 태깅이 됐는지 확인 > hyunuk-repo 이미지가 새로운 308943070041.dkr.ecr.ap-northeast-1.amazonaws.com/hyunuk-repo 이름으로 태깅이 된 것을 확인
+```
+docker images
+```
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/945afa9f-7552-4887-b9bb-0fd29f11b7fe)
+
+10. 푸시 명령어 중에 4번 명령어를 실행하여 이미지를 리포지토리(Repository) 에 푸쉬
+```
+docker push 308943070041.dkr.ecr.ap-northeast-1.amazonaws.com/hyunuk-repo:latest
+```
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/d035826e-2e3b-4c24-8001-57fa51ac37f9)
+
+11. 푸시한 이미지 확인 > 이미지 태그인 latest를 선택
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/33ebc23f-ad6d-47be-9351-9f39209a54fe)
+
+12. URI가 이미지 주소 > URI를 통해 실행
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/4067cfed-7b2c-4478-b8d2-9d690c356c09)
+
+13. 모든 컨테이너 이미지를 삭제
+```
+docker rmi -f $(docker images -q)
+```
+
+14. ECR Repository에서 이미지를 풀(다운) 받아서 실행
+```
+docker run --name 2048 -dp 2000:80 308943070041.dkr.ecr.ap-northeast-1.amazonaws.com/hyunuk-repo:latest
+```
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/f55edd32-c8e7-469e-8a65-dc62678d76f4)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/c7b6f3eb-d085-4ad7-8369-91827477c028)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
