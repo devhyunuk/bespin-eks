@@ -68,12 +68,14 @@ kubectl get nodes
 ```
 eksctl delete cluster --name myeks --region ${AWS_REGION}
 ```
+![image](https://github.com/devhyunuk/eks-essential/assets/49749510/0d6f74d8-8e41-45cf-8848-facf4b56477d)
 
 2. Cloud9 인스턴스 삭제
+![image](https://github.com/devhyunuk/eks-essential/assets/49749510/9e0c1dd6-e7ae-4aa6-9acc-02d9a6d09983)
 
 3. IAM 에서 admin eksrole 삭제
 
-4. Elastic Container Registry 에서 리포지토리 삭
+4. Elastic Container Registry 에서 리포지토리 삭제
 
 
 
