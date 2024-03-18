@@ -1,4 +1,4 @@
-![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/80a2be2b-70ac-4d39-a8a3-4e2a07aa72fa)![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/528d60ae-e129-44b9-96d6-0113c9fbca2d)# Cloud9 IDE 환경 구성
+# Cloud9 IDE 환경 구성
 
 --- 
 ### 1. Cloud9 생성
@@ -67,3 +67,5 @@ rm -vf ${HOME}/.aws/credentials
 ![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/509fdd81-3596-456a-ab22-abdb887965bc)
 
 
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/80a2be2b-70ac-4d39-a8a3-4e2a07aa72fa)
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/528d60ae-e129-44b9-96d6-0113c9fbca2d)
