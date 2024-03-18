@@ -58,6 +58,8 @@ eksctl create cluster --name myeks --version 1.26 --region ${AWS_REGION}
 ```
 kubectl get nodes
 ```
+![image](https://github.com/devhyunuk/eks-essential/assets/49749510/556fe236-cef7-4b5f-b5de-47b019be0ef8)
+
 
 
 
