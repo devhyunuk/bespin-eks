@@ -47,4 +47,16 @@
 6. Cloud9 인스턴스를 선택 > 작업(Actions) 선택 > 보안(Security) 선택 > IAM 역할 수정(Modify IAM role) 선택
 ![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/499a9270-f8ec-4bf9-af11-37218c2c437b)
 
-8. 
+7. admin-eks-role 선택 > IAM 역할 업데이트(Update IAM role) 선택 > Cloud9 인스턴스에 AdministratorAccess권한 적용 완료
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/fdf1e370-28cc-4488-b698-999b9ed230fe)
+
+8. 톱니바퀴 아이콘 선택 > AWS Settings 메뉴 선택 > AWS managed temporary credentials: 을 비활성화
+   - 비활성화 사유 : AWS managed temporary credentials이 활성화 되어 있으면 Cloud9에서 수동으로 Credential을 수정하여도 적용되지 않고, temporary credentials 값으로 계속 유지 
+![image](https://github.com/devhyunuk/bespin-essential/assets/49749510/9c16f63c-09ca-4432-b4d4-479ca638bf92)
+
+9. 아래 명령어 실행 (기존에 존재하는 자격증명 파일을 제거)
+```
+rm -vf ${HOME}/.aws/credentials
+```
+
+10. Docker와 Kubernetes 관련 실습을 하기 위한 Cloud9을 만들고 권한 부여 완
