@@ -1,4 +1,4 @@
-<img width="549" alt="image" src="https://github.com/devhyunuk/bespin-essential/assets/49749510/a64e8723-8e32-4d6d-8353-47393eea4b7e"># Cloud9 IDE 환경 구성
+# Cloud9 IDE 환경 구성
 
 ### 목표
 - Docker 명령어
