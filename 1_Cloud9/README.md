@@ -59,4 +59,4 @@
 rm -vf ${HOME}/.aws/credentials
 ```
 
-10. Docker와 Kubernetes 관련 실습을 하기 위한 Cloud9을 만들고 권한 부여 완
+10. Cloud9 생성과 권한 부여 완료
